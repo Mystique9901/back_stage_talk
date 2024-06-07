@@ -1,0 +1,97 @@
+$main-text: black;
+$text: white;
+$fixedMar: 20px;
+
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+body {
+  padding: 20px;
+}
+
+@mixin fixed-item() {
+  position: fixed;
+  color: $main-text;
+}
+
+#logo {
+  @include fixed-item();
+
+  top: $fixedMar;
+  left: $fixedMar;
+
+  font-size: 30px;
+  font-weight: bolder;
+}
+
+#email {
+  @include fixed-item();
+  top: $fixedMar;
+  right: $fixedMar;
+}
+
+.about {
+  @include fixed-item();
+  width: 400px;
+
+  bottom: 80px;
+  left: $fixedMar;
+}
+
+#privacy {
+  @include fixed-item();
+  bottom: $fixedMar;
+  left: $fixedMar;
+}
+.issue-nav {
+  position: fixed;
+
+  bottom: $fixedMar;
+  right: $fixedMar;
+
+  display: flex;
+  flex-direction: column;
+
+  a {
+    color: $main-text;
+    font-weight: 200;
+  }
+}
+
+.container {
+  // scroll-snap-type: x mandatory;
+
+  width: 20vw;
+  height: 100vh;
+
+  margin: auto;
+
+  margin-top: 50px;
+
+  // scroll-padding: 30px;
+
+  .issue {
+    width: 100%;
+    height: 100%;
+    // scroll-snap-align: start;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .img-div {
+      width: 100%;
+      height: 70%;
+
+      background-repeat: no-repeat;
+      background-size: cover;
+
+      box-shadow: 5px 5px 5px #aaaaaa;
+    }
+  }
+}
